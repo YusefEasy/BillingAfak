@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AFAK BILLING</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <button id="darkModeToggle" class="toggle-btn" aria-label="Toggle Dark Mode">🌙</button>
+  <!-- Logout Button on the top right -->
+  <button id="logoutButton" style="position: fixed; top: 20px; right: 20px; padding: 10px 15px; font-size: 16px; background-color: #e74c3c; color: white; border: none; border-radius: 8px; cursor: pointer;">
+    Logout
+  </button>
+
+  <div class="container">
+    <h1 class="page-title">AFAK BILLING</h1>
+
+    <h2 class="section-title">Model Management</h2>
+    <form id="modelForm" class="model-form">
+      <input type="text" id="modelName" class="input-field" placeholder="Model Name" required>
+      <input type="number" id="modelPrice" class="input-field" placeholder="Price (DH)" required>
+      <button type="submit" class="submit-btn">Add Model</button>
+    </form>
+
+    <a href="/data" class="back-link">View All Data</a>
+    <a href="/export" class="back-link">Export to PDF</a>
+  </div>
+
+  <script src="/script.js"></script>
+  <script>
+    // Check if the user is logged in, hide/show logout button accordingly
+    if (sessionStorage.getItem("loggedIn") !== "true") {
+      document.getElementById("logoutButton").style.display = "none";
+    }
+  
+    // Handle the logout button functionality
+    document.getElementById("logoutButton").addEventListener("click", () => {
+      // Clear login status from sessionStorage
+      sessionStorage.removeItem("loggedIn");
+  
+      // Redirect to the login page after logout
+      window.location.href = "/login";
+    });
+  </script>
+</body>
+</html>

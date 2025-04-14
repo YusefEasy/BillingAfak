@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Export to PDF</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <button id="darkModeToggle" class="toggle-btn" aria-label="Toggle Dark Mode">🌙</button>
+  <!-- Logout Button on the top right -->
+  <button id="logoutButton" style="position: fixed; top: 20px; right: 20px; padding: 10px 15px; font-size: 16px; background-color: #e74c3c; color: white; border: none; border-radius: 8px; cursor: pointer;">
+    Logout
+  </button>
+
+  <div class="container">
+    <h1 class="page-title">Export to PDF</h1>
+
+    <div class="vendor-input">
+      <h3 class="input-label">Vendor Name</h3>
+      <input type="text" id="vendorName" class="input-field" placeholder="Enter Vendor Name" required>
+    </div>
+
+    <div class="search-model">
+      <h3 class="section-title">Search and Add Models</h3>
+      <input type="text" id="searchModelExport" class="search-input" placeholder="Search Model">
+      <div id="searchResultsExport" class="search-results"></div>
+
+      <div id="modelDetails" class="model-details" style="display: none;">
+        <h4>Model Details</h4>
+        <input type="number" id="quantity" class="quantity-input" placeholder="Quantity" min="1">
+        <input type="number" id="packages" class="packages-input" placeholder="Packages" min="1">
+        <input type="number" id="pairs" class="pairs-input" placeholder="Pairs" min="1">
+        <button id="addModelDetails" class="action-btn">Add Model</button>
+      </div>
+    </div>
+
+    <div class="selected-models">
+      <h3 class="section-title">Selected Models</h3>
+      <div id="selectedModelsList" class="model-list"></div>
+    </div>
+
+    <form id="exportForm">
+      <button type="submit" class="export-button">Export to PDF</button>
+    </form>
+
+    <a href="/" class="back-link">Back to Home</a>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/vfs_fonts.js"></script>
+  <script src="/script.js"></script>
+  <script>
+    // Check if the user is logged in, hide/show logout button accordingly
+    if (sessionStorage.getItem("loggedIn") !== "true") {
+      document.getElementById("logoutButton").style.display = "none";
+    }
+  
+    // Handle the logout button functionality
+    document.getElementById("logoutButton").addEventListener("click", () => {
+      // Clear login status from sessionStorage
+      sessionStorage.removeItem("loggedIn");
+  
+      // Redirect to the login page after logout
+      window.location.href = "/login";
+    });
+  </script>
+</body>
+</html>

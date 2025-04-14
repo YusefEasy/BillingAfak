@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Overview</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <button id="darkModeToggle" class="toggle-btn" aria-label="Toggle Dark Mode">🌙</button>
+  <!-- Logout Button on the top right -->
+  <button id="logoutButton" style="position: fixed; top: 20px; right: 20px; padding: 10px 15px; font-size: 16px; background-color: #e74c3c; color: white; border: none; border-radius: 8px; cursor: pointer;">
+    Logout
+  </button>
+
+  <div class="container">
+    <h1 class="page-title">Data Overview</h1>
+
+    <h2 class="section-title">Models</h2>
+    <table id="modelTable" class="data-table">
+      <thead>
+        <tr>
+          <th class="table-header">ID</th>
+          <th class="table-header">Name</th>
+          <th class="table-header">Price (DH)</th>
+          <th class="table-header">Created At</th>
+          <th class="table-header">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Model rows will be inserted here by JavaScript -->
+      </tbody>
+    </table>
+
+    <a href="/" class="back-link">Back to Home</a>
+  </div>
+  <script src="/script.js"></script>
+  <script>
+    // Check if the user is logged in, hide/show logout button accordingly
+    if (sessionStorage.getItem("loggedIn") !== "true") {
+      document.getElementById("logoutButton").style.display = "none";
+    }
+  
+    // Handle the logout button functionality
+    document.getElementById("logoutButton").addEventListener("click", () => {
+      // Clear login status from sessionStorage
+      sessionStorage.removeItem("loggedIn");
+  
+      // Redirect to the login page after logout
+      window.location.href = "/login";
+    });
+  </script>
+</body>
+</html>

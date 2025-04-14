@@ -1,0 +1,348 @@
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative; /* Ensure the dark mode button stays inside */
+}
+
+h1.page-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Montserrat', sans-serif;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+h2.section-title, h3.input-label, h4 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+h3.search-model {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background: #3498db;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 10px; /* Add margin between buttons */
+}
+
+button:hover {
+  background: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(52, 152, 219, 0.3);
+}
+
+button.logout-btn {
+  background-color: #e74c3c;
+  color: white;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button.logout-btn:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(231, 76, 60, 0.3);
+}
+
+button.submit-btn, .export-button {
+  background: #3498db;
+  color: #fff;
+}
+
+button.submit-btn:hover, .export-button:hover {
+  background: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(52, 152, 219, 0.3);
+}
+
+/* Tables */
+table.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th.table-header, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th.table-header {
+  background: #f9f9f9;
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+/* Inputs */
+input, textarea, select, .input-field, .search-input {
+  padding: 12px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f9f9f9;
+  color: #333;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-sizing: border-box; /* Ensure inputs stay inside the container */
+  margin-bottom: 10px;
+}
+
+input:focus, textarea:focus, select:focus, .input-field:focus, .search-input:focus {
+  border-color: #3498db;
+  background: #fff;
+  box-shadow: 0 0 12px rgba(52, 152, 219, 0.3);
+}
+
+input.login-input {
+  width: 100%;
+}
+
+input.login-input:focus {
+  border-color: #3498db;
+}
+
+/* Links */
+.back-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #3498db;
+  text-decoration: none;
+  background: transparent;
+  border: 2px solid #3498db;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.back-link:hover {
+  color: #fff;
+  background: #3498db;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(52, 152, 219, 0.3);
+}
+
+/* Vendor Input */
+.vendor-input {
+  margin-bottom: 20px;
+}
+
+.vendor-input input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f9f9f9;
+  color: #333;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-sizing: border-box; /* Ensure vendor input stays inside the container */
+}
+
+.vendor-input input:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 12px rgba(52, 152, 219, 0.3);
+}
+
+/* Search Results */
+#searchModelExport, #searchResultsExport {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+#searchResultsExport {
+  margin-top: 10px;
+}
+
+#searchResultsExport div {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  transition: all 0.3s ease;
+}
+
+#searchResultsExport div:hover {
+  background: #f9f9f9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode .container {
+  background: #1e1e1e;
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode h1.page-title, body.dark-mode h2.section-title {
+  color: #00e6ff;
+}
+
+body.dark-mode input, body.dark-mode textarea, body.dark-mode select, body.dark-mode .input-field, body.dark-mode .search-input {
+  background: #333;
+  color: #e0e0e0;
+  border-color: #555;
+}
+
+body.dark-mode button, body.dark-mode .logout-btn, body.dark-mode .submit-btn, body.dark-mode .export-button {
+  background: #00e6ff;
+  color: #000;
+}
+
+body.dark-mode button:hover, body.dark-mode .logout-btn:hover, body.dark-mode .submit-btn:hover, body.dark-mode .export-button:hover {
+  background: transparent;
+  color: #00e6ff;
+  border: 1px solid #00e6ff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 230, 255, 0.3);
+}
+
+/* Dark Mode Toggle Button */
+#darkModeToggle {
+  position: absolute; /* Fixed position inside the container */
+  top: 20px;
+  left: 20px;
+  padding: 12px;
+  font-size: 24px;
+  color: #fff;
+  background: #3498db;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+}
+
+#darkModeToggle:hover {
+  background: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(52, 152, 219, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  h1.page-title {
+    font-size: 1.5rem;
+  }
+
+  form {
+    flex-direction: column;
+  }
+
+  input, button {
+    width: 100%;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .actions button {
+    width: 100%;
+  }
+
+  #darkModeToggle {
+    top: 10px;
+    left: 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1.page-title {
+    font-size: 1.2rem;
+  }
+
+  .container {
+    padding: 10px;
+    margin: 5px;
+  }
+
+  input, button {
+    font-size: 14px;
+  }
+
+  table {
+    font-size: 12px;
+  }
+
+  th, td {
+    padding: 6px;
+  }
+
+  .actions button {
+    font-size: 12px;
+  }
+
+  #darkModeToggle {
+    top: 5px;
+    left: 5px;
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+}
